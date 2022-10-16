@@ -1,5 +1,7 @@
 {
   "name": "ui",
+  "description": "UI elements for examples app",
+  "private": true,
   "version": "0.0.0",
   "main": "./index.tsx",
   "types": "./index.tsx",

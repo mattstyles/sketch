@@ -20,6 +20,11 @@
   "engines": {
     "node": ">=14.0.0"
   },
+  "alias": {
+    "process": {
+      "global": "{}"
+    }
+  },
   "dependencies": {},
   "packageManager": "pnpm@7.12.1"
 }
