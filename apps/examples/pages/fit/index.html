@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sketch-context</title>
+    <link rel="stylesheet" href="~/src/global.css" />
+    <style>
+      .container {
+        max-width: 100%;
+        width: 640px;
+        height: 480px;
+        border: 1px solid rebeccapurple;
+      }
+      .spacer {
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sketch-fit</h1>
+    <p>Try resizing the screen or hit the resize button</p>
+    <p></p>
+    <div class="js-container container">
+      <canvas class="js-canvas" width="200" height="200"></canvas>
+    </div>
+    <div class="spacer"></div>
+    <button class="js-button">Resize</button>
+  </body>
+  <script type="module" src="./fit.ts"></script>
+</html>

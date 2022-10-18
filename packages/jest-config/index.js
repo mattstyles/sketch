@@ -7,11 +7,6 @@ module.exports = {
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/'],
   roots: ['<rootDir>/src'],
   injectGlobals: false,
-  // testEnvironment: 'jsdom',
   watchman: false,
+  // testEnvironment: 'jsdom',
 }
-
-// const config = require('jest-config')
-// module.exports = {
-//   ...config,
-// }

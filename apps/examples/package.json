@@ -10,7 +10,11 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sketch-canvas": "workspace:*",
+    "sketch-canvas-size": "workspace:*",
     "sketch-context": "workspace:*",
+    "sketch-fit": "workspace:*",
+    "sketch-loop": "workspace:*",
     "ui": "workspace:*"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "sketch-context",
+  "name": "sketch-fit",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -16,7 +16,9 @@
   "author": "Matt Styles",
   "license": "MIT",
   "dependencies": {
-    "sketch-canvas-size": "workspace:*"
+    "sketch-canvas": "workspace:*",
+    "sketch-canvas-size": "workspace:*",
+    "sketch-context": "workspace:*"
   },
   "devDependencies": {
     "@jest/globals": "^29.2.0",
