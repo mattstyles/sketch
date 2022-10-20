@@ -36,6 +36,17 @@ export function withResize<T extends Constructor<BaseApplication>>(Base: T) {
               fn()
             }
           }
+
+          // This solves an issue with canvas clear flickering
+          // Not mad keen on the solution though
+          if (this._events.has('tick')) {
+            const m = this._events.get('tick')
+            if (m != null) {
+              for (let [_, fn] of m) {
+                fn(0)
+              }
+            }
+          }
         }
       })
 
