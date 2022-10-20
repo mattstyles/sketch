@@ -53,3 +53,7 @@ app.on({
   },
 })
 ```
+
+## License
+
+MIT
