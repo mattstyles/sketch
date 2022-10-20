@@ -1,6 +1,6 @@
 {
   "name": "sketch-attach",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Attaches a canvas to a container element",
   "main": "lib/index.js",
   "module": "lib/index.mjs",

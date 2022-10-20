@@ -1,6 +1,6 @@
 {
   "name": "sketch-canvas",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Exposes a canvas element",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
