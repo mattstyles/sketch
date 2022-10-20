@@ -1,7 +1,7 @@
 {
   "name": "sketch-application",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Base application class for canvas methods and mixins",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
   "jsnext:main": "lib/index.mjs",

@@ -1,7 +1,7 @@
 {
   "name": "sketch-react-loop",
-  "version": "1.0.0",
-  "description": "Creates a sketch application that fits its container and exposes a method to animate the canvas",
+  "version": "0.0.1",
+  "description": "React component to expose a canvas that resizes itself and exposes a method to handle an animation event",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
   "jsnext:main": "lib/index.mjs",
