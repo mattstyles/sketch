@@ -4,6 +4,8 @@ Sketch exposes a number of utility functions (all in their own packages) for han
 
 Wherever possible functions share a common API and patterns.
 
+See [examples](https://mattstyles.github.io/sketch).
+
 ## Getting started
 
 Sketch is great at setting up demos or small rendering environments for canvas elements and provides a number of helpers to smooth out the experience such as setting up the rendering environment for high dpi screens and managing the size of the rendering area.
