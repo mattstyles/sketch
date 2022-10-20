@@ -15,11 +15,13 @@
     "sketch-context": "workspace:*",
     "sketch-fit": "workspace:*",
     "sketch-loop": "workspace:*",
+    "sketch-react-loop": "workspace:*",
     "ui": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
     "@types/react": "18.0.17",
+    "@types/react-dom": "^18.0.6",
     "del-cli": "^5.0.0",
     "eslint": "7.32.0",
     "eslint-config-custom": "workspace:*",

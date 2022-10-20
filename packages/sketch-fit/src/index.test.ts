@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import {test, expect} from '@jest/globals'
+import {test, expect, jest} from '@jest/globals'
 
 //@ts-ignore
 global.ResizeObserver = jest.fn().mockImplementation(() => ({

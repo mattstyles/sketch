@@ -9,17 +9,19 @@ export interface ResizeEvent extends Event {
   type: 'resize'
   action: () => void
 }
+export type ResizeApplication = InstanceType<ReturnType<typeof withResize>>
 export function withResize<T extends Constructor<BaseApplication>>(Base: T) {
   return class Resize extends Base {
-    static mapKey = 'resize'
+    // Had to remove as typing for the class did not match with the return type
+    // static mapKey = 'resize'
 
     constructor(...args: any[]) {
       super(...args)
 
-      this._events.set(Resize.mapKey, new Map())
+      this._events.set('resize', new Map())
 
       const resizeObserver = new ResizeObserver((entries) => {
-        const map = this._events.get(Resize.mapKey)
+        const map = this._events.get('resize')
 
         for (const entry of entries) {
           const cr = entry.contentRect
@@ -57,9 +59,10 @@ export interface TickEvent extends Event {
   type: 'tick'
   action: (dt: number) => void
 }
+export type TickApplication = InstanceType<ReturnType<typeof withTick>>
 export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
   return class Ticker extends Base {
-    static mapKey = 'tick'
+    // static mapKey = 'tick'
 
     #last: number
     #tickID: number | null
@@ -71,7 +74,7 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
       this.#tickID = null
       // @TODO might need to shim this to run in node
       this.#last = window.performance.now()
-      this._events.set(Ticker.mapKey, new Map())
+      this._events.set('tick', new Map())
 
       this._disposers.add(() => {
         if (this.#tickID) {
@@ -85,7 +88,7 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
         return
       }
 
-      const map = this._events.get(Ticker.mapKey)
+      const map = this._events.get('tick')
       if (map != null) {
         const now = window.performance.now()
         for (let [_, fn] of map) {
@@ -106,6 +109,10 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
 
     stop() {
       this.#isRunning = false
+    }
+
+    override on(event: ResizeEvent | TickEvent) {
+      return super.on(event)
     }
   }
 }
