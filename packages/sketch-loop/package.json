@@ -16,7 +16,8 @@
   "author": "Matt Styles",
   "license": "MIT",
   "dependencies": {
-    "sketch-canvas-size": "workspace:*"
+    "sketch-application": "workspace:*",
+    "sketch-attach": "workspace:*"
   },
   "devDependencies": {
     "@jest/globals": "^29.2.0",

@@ -31,12 +31,12 @@ function render() {
     )
     app.ctx.stroke()
   }
-
-  // window.requestAnimationFrame(render)
 }
-// render()
 
-app.onResize(render)
+app.on({
+  type: 'resize',
+  action: render,
+})
 
 const button = document.querySelector('.js-button')
 button?.addEventListener('click', () => {
