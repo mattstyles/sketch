@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel pages/*.html pages/**/*.html",
     "clean": "del dist",
-    "build": "pnpm run clean && parcel build pages/*.html pages/**/*.html --public-url ./"
+    "build": "pnpm run clean && parcel build pages/*.html pages/**/*.html --public-url ./sketch/"
   },
   "dependencies": {
     "react": "18.2.0",
