@@ -39,15 +39,7 @@ function Controls() {
   const [isRunning, setIsRunning] = useState(true)
 
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 16,
-        right: 16,
-        padding: 8,
-        backgroundColor: 'rgba(0, 0, 0, 0.12)',
-        borderRadius: 3,
-      }}>
+    <div className='overlay absolute top-right'>
       <button
         disabled={app == null}
         onClick={() => {

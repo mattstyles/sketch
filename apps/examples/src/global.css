@@ -20,3 +20,17 @@ body {
 .content.padding {
   padding: 8px;
 }
+
+.overlay {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+
+.absolute {
+  position: absolute;
+}
+.absolute.top-right {
+  top: 16px;
+  right: 16px;
+}
