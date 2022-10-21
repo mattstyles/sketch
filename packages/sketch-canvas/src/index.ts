@@ -11,6 +11,7 @@ export function create(opts?: {
   const canvas = document.createElement('canvas')
   const width = opts?.width ?? canvas.width
   const height = opts?.height ?? canvas.height
+  canvas.style.userSelect = 'none'
 
   setCanvasSize({
     canvas,

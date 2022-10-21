@@ -130,6 +130,80 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
       this.isRunning = false
     }
 
+    override on(event: ResizeEvent | TickEvent | InteractionEvent) {
+      return super.on(event)
+    }
+  }
+}
+
+// @TODO we should probably expose more information about touches here, for now just use it as we would mouse events and ignore multitouch etc
+export type Point = {x: number; y: number}
+export interface InteractionEvent extends Event {
+  type: 'pointerdown' | 'pointerup' | 'pointermove'
+  action: ({point, app}: {point: Point; app: TickApplication}) => void
+}
+export type InteractiveApplication = InstanceType<ReturnType<typeof withTick>>
+export function withInteraction<T extends Constructor<BaseApplication>>(
+  Base: T
+) {
+  return class Interactive extends Base {
+    constructor(...args: any[]) {
+      super(...args)
+
+      this._events.set('pointerdown', new Map())
+      this._events.set('pointerup', new Map())
+      this._events.set('pointermove', new Map())
+
+      this.canvas.addEventListener('pointerdown', this.#onPointerdown)
+      this.canvas.addEventListener('pointerup', this.#onPointerup)
+      this.canvas.addEventListener('pointermove', this.#onPointermove)
+
+      this._disposers.add(() => {
+        this.canvas.removeEventListener('pointerdown', this.#onPointerdown)
+        this.canvas.removeEventListener('pointerup', this.#onPointerup)
+        this.canvas.removeEventListener('pointermove', this.#onPointermove)
+      })
+    }
+
+    #onPointerdown = (event: PointerEvent) => {
+      const map = this._events.get('pointerdown')
+      const scale = window.devicePixelRatio
+      if (map != null) {
+        for (let [_, fn] of map) {
+          fn({
+            point: {x: event.clientX * scale, y: event.clientY * scale},
+            app: this,
+          })
+        }
+      }
+    }
+
+    #onPointerup = (event: PointerEvent) => {
+      const map = this._events.get('pointerup')
+      const scale = window.devicePixelRatio
+      if (map != null) {
+        for (let [_, fn] of map) {
+          fn({
+            point: {x: event.clientX * scale, y: event.clientY * scale},
+            app: this,
+          })
+        }
+      }
+    }
+
+    #onPointermove = (event: PointerEvent) => {
+      const map = this._events.get('pointermove')
+      const scale = window.devicePixelRatio
+      if (map != null) {
+        for (let [_, fn] of map) {
+          fn({
+            point: {x: event.clientX * scale, y: event.clientY * scale},
+            app: this,
+          })
+        }
+      }
+    }
+
     override on(event: ResizeEvent | TickEvent) {
       return super.on(event)
     }

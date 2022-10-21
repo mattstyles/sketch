@@ -34,3 +34,11 @@ body {
   top: 16px;
   right: 16px;
 }
+
+.text-on-dark {
+  color: white;
+}
+p.text {
+  margin: 0;
+  line-height: 1.6;
+}

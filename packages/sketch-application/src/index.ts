@@ -1,11 +1,10 @@
 export type {Event} from './application'
-export type {ResizeEvent, TickEvent} from './mixins'
+export type {ResizeEvent, TickEvent, InteractionEvent} from './mixins'
 
-import {BaseApplication} from './application'
-import {withResize, withTick} from './mixins'
-export type {ResizeApplication, TickApplication} from './mixins'
-
-// export const ResizeApplication = withResize(BaseApplication)
-// export const TickApplication = withTick(BaseApplication)
-
-export {BaseApplication, withResize, withTick}
+export {BaseApplication} from './application'
+export {withResize, withTick, withInteraction} from './mixins'
+export type {
+  ResizeApplication,
+  TickApplication,
+  InteractiveApplication,
+} from './mixins'

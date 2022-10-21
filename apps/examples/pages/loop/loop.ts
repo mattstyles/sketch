@@ -48,6 +48,31 @@ app.on({
   type: 'tick',
   action: render,
 })
+const pointerEl = document.querySelector('.js-pointer') as HTMLElement
+const pointerX = document.querySelector('.js-pointer-x') as HTMLElement
+const pointerY = document.querySelector('.js-pointer-y') as HTMLElement
+app.on({
+  type: 'pointerdown',
+  action: ({point}) => {
+    // console.log('pointer down', point)
+    pointerEl.innerHTML = 'down'
+  },
+})
+app.on({
+  type: 'pointerup',
+  action: ({point}) => {
+    // console.log('pointer up', point)
+    pointerEl.innerHTML = 'up'
+  },
+})
+app.on({
+  type: 'pointermove',
+  action: ({point}) => {
+    // console.log('pointer move', point)
+    pointerX.innerHTML = point.x.toFixed(2)
+    pointerY.innerHTML = point.y.toFixed(2)
+  },
+})
 
 app.start()
 

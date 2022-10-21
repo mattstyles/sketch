@@ -1,6 +1,6 @@
 {
   "name": "sketch-canvas-size",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sets canvas size using dpr",
   "main": "lib/index.js",
   "module": "lib/index.mjs",

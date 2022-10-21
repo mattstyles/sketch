@@ -1,5 +1,16 @@
 # sketch-canvas
 
+## 0.2.0
+
+### Minor Changes
+
+- add react specific implementations
+
+### Patch Changes
+
+- Updated dependencies
+  - sketch-canvas-size@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes
