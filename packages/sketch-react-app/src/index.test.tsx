@@ -3,11 +3,11 @@
  */
 
 // Conflicts with testing library jest dom due to matchers, had to enable globals in the jest config. Couldn't get expect.extend to work.
-// import {test, expect, jest} from '@jest/globals'
-import {render} from '@testing-library/react'
+import {useEffect} from 'react'
+import {render, waitFor} from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import {SketchLoop} from './'
+import {SketchProvider, SketchAttachment, useSketchApp, useSketchTick} from './'
 
 //@ts-ignore
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
@@ -16,10 +16,58 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
   disconnect: jest.fn(),
 }))
 
-test('Sketch loop component triggers tick event', () => {
+test('Sketch app can be accessed via context', async () => {
   const tick = jest.fn()
 
-  render(<SketchLoop onTick={tick} />)
+  function Child() {
+    const app = useSketchApp()
+    useEffect(() => {
+      if (app == null) {
+        return
+      }
 
-  expect(tick).toHaveBeenCalled()
+      const unsubscribe = app.on({
+        type: 'tick',
+        action: tick,
+      })
+
+      return unsubscribe
+    }, [app])
+    return <SketchAttachment />
+  }
+  function Test() {
+    return (
+      <SketchProvider>
+        <Child />
+      </SketchProvider>
+    )
+  }
+
+  render(<Test />)
+
+  await waitFor(() => {
+    expect(tick).toHaveBeenCalled()
+  })
+})
+
+test('useSketchTick helper will fire', async () => {
+  const tick = jest.fn()
+
+  function Child() {
+    useSketchTick(tick)
+    return <SketchAttachment />
+  }
+  function Test() {
+    return (
+      <SketchProvider>
+        <Child />
+      </SketchProvider>
+    )
+  }
+
+  render(<Test />)
+
+  await waitFor(() => {
+    expect(tick).toHaveBeenCalled()
+  })
 })

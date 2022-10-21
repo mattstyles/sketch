@@ -4,7 +4,10 @@
 
 import {describe, test, expect, jest} from '@jest/globals'
 
-import {ResizeApplication, TickApplication} from './'
+import {withResize, withTick, BaseApplication} from './'
+
+const ResizeApplication = withResize(BaseApplication)
+const TickApplication = withTick(BaseApplication)
 
 //@ts-ignore
 global.ResizeObserver = jest.fn().mockImplementation(() => ({

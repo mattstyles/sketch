@@ -6,7 +6,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/'],
   roots: ['<rootDir>/src'],
-  injectGlobals: false,
+  injectGlobals: true,
   // testEnvironment: 'jsdom',
   watchman: false,
 }
