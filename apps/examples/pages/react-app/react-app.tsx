@@ -56,12 +56,12 @@ function Controls() {
           }
 
           if (isRunning) {
-            setIsRunning(false)
             app.stop()
           } else {
-            setIsRunning(true)
             app.start()
           }
+
+          setIsRunning(app.isRunning)
         }}>
         {isRunning ? 'Pause' : 'Resume'}
       </button>

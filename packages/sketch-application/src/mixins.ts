@@ -82,7 +82,7 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
 
     #last: number
     #tickID: number | null
-    #isRunning: boolean = false
+    isRunning: boolean = false
 
     constructor(...args: any[]) {
       super(...args)
@@ -100,7 +100,7 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
     }
 
     #tick = () => {
-      if (this.#isRunning === false) {
+      if (this.isRunning === false) {
         return
       }
 
@@ -121,13 +121,13 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
     }
 
     start() {
-      this.#isRunning = true
+      this.isRunning = true
       this.#last = window.performance.now()
       this.#tick()
     }
 
     stop() {
-      this.#isRunning = false
+      this.isRunning = false
     }
 
     override on(event: ResizeEvent | TickEvent) {
