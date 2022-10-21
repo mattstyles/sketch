@@ -1,5 +1,11 @@
 # jest-config
 
+## 0.3.0
+
+### Minor Changes
+
+- add interactive mixin
+
 ## 0.2.0
 
 ### Minor Changes

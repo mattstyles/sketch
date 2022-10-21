@@ -1,6 +1,6 @@
 {
   "name": "sketch-react-loop",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React component to expose a canvas that resizes itself and exposes a method to handle an animation event",
   "main": "lib/index.js",
   "module": "lib/index.mjs",

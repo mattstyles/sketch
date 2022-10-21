@@ -2,7 +2,7 @@
   "name": "ui",
   "description": "UI elements for examples app",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",

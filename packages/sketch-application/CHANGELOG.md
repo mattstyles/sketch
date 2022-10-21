@@ -1,5 +1,17 @@
 # sketch-application
 
+## 0.3.0
+
+### Minor Changes
+
+- add interactive mixin
+
+### Patch Changes
+
+- Updated dependencies
+  - sketch-canvas-size@0.3.0
+  - sketch-context@0.3.0
+
 ## 0.2.0
 
 ### Minor Changes
