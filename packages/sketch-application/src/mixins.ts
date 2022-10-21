@@ -7,7 +7,7 @@ type Constructor<T = {}> = new (...args: any[]) => T
 
 export interface ResizeEvent extends Event {
   type: 'resize'
-  action: () => void
+  action: ({app}: {app: ResizeApplication}) => void
 }
 export type ResizeApplication = InstanceType<ReturnType<typeof withResize>>
 export function withResize<T extends Constructor<BaseApplication>>(Base: T) {
@@ -33,7 +33,9 @@ export function withResize<T extends Constructor<BaseApplication>>(Base: T) {
 
           if (map != null) {
             for (let [_, fn] of map) {
-              fn()
+              fn({
+                app: this,
+              })
             }
           }
 
@@ -43,7 +45,10 @@ export function withResize<T extends Constructor<BaseApplication>>(Base: T) {
             const m = this._events.get('tick')
             if (m != null) {
               for (let [_, fn] of m) {
-                fn(0)
+                fn({
+                  dt: 0,
+                  app: this,
+                })
               }
             }
           }
@@ -68,7 +73,7 @@ export function withResize<T extends Constructor<BaseApplication>>(Base: T) {
 
 export interface TickEvent extends Event {
   type: 'tick'
-  action: (dt: number) => void
+  action: ({dt, app}: {dt: number; app: TickApplication}) => void
 }
 export type TickApplication = InstanceType<ReturnType<typeof withTick>>
 export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
@@ -103,7 +108,10 @@ export function withTick<T extends Constructor<BaseApplication>>(Base: T) {
       if (map != null) {
         const now = window.performance.now()
         for (let [_, fn] of map) {
-          fn(now - this.#last)
+          fn({
+            dt: now - this.#last,
+            app: this,
+          })
         }
 
         this.#last = now

@@ -39,7 +39,7 @@ app.on({
 })
 app.on({
   type: 'tick',
-  action: (dt) => {
+  action: ({dt}) => {
     time = time + dt / 500
     sizeFactor = 1 + Math.sin(time) * 0.35
   },

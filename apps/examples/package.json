@@ -15,6 +15,7 @@
     "sketch-context": "workspace:*",
     "sketch-fit": "workspace:*",
     "sketch-loop": "workspace:*",
+    "sketch-react-app": "workspace:*",
     "sketch-react-loop": "workspace:*",
     "ui": "workspace:*"
   },

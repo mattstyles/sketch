@@ -17,12 +17,7 @@ export function SketchLoop({onTick = ({}) => {}}: Props) {
     })
     app.on({
       type: 'tick',
-      action: (dt) => {
-        onTick({
-          dt,
-          app,
-        })
-      },
+      action: onTick,
     })
     app.start()
 

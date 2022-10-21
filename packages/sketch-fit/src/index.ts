@@ -3,7 +3,7 @@ import type {Attachment} from 'sketch-attach'
 import {attach} from 'sketch-attach'
 import {withResize, BaseApplication} from 'sketch-application'
 
-export function fit(opts?: Attachment) {
+export function fit(opts?: Attachment): Application {
   const {canvas} = attach(opts)
   return new Application(canvas)
 }
