@@ -14,7 +14,7 @@ Based on [canvas-loop](https://github.com/mattdesl/canvas-loop) but with some mo
 Install from [npm](https://npmjs.com)
 
 ```sh
-npm i -S sketch-fit
+npm i -S sketch-loop
 ```
 
 Sketch-loop is great for setting up demos or small canvas animations, it has a couple of features:
