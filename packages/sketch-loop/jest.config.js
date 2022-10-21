@@ -1,7 +1,4 @@
 module.exports = {
-  // transform: {
-  //   '^.+\\.(t|j)sx?$': ['tsup'],
-  // },
   preset: 'ts-jest',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/'],
@@ -10,8 +7,3 @@ module.exports = {
   // testEnvironment: 'jsdom',
   watchman: false,
 }
-
-// const config = require('jest-config')
-// module.exports = {
-//   ...config,
-// }
