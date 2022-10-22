@@ -1,5 +1,11 @@
 # sketch-canvas-size
 
+## 0.3.1
+
+### Patch Changes
+
+- b69dbf7: Exports application type for sketch-react-loop
+
 ## 0.3.0
 
 ### Minor Changes
