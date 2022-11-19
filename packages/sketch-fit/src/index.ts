@@ -1,12 +1,12 @@
-import type {ResizeApplication} from 'sketch-application'
 import type {Attachment} from 'sketch-attach'
 import {attach} from 'sketch-attach'
-import {withResize, BaseApplication} from 'sketch-application'
+import {withResize, CtxApplication, ResizeEvent} from 'sketch-application'
 
-export function fit(opts?: Attachment): Application {
+export function fit(opts?: Attachment) {
   const {canvas} = attach(opts)
   return new Application(canvas)
 }
 
-const Application = withResize(BaseApplication)
-export type Application = ResizeApplication
+const Application = withResize<ResizeEvent, typeof CtxApplication>(
+  CtxApplication
+)

@@ -1,26 +1,25 @@
-import type {
-  TickApplication,
-  ResizeApplication,
-  InteractiveApplication,
-} from 'sketch-application'
 import type {Attachment} from 'sketch-attach'
+import type {
+  ResizeEvent,
+  TickEvent,
+  InteractionEvent,
+  TickApplication,
+} from 'sketch-application'
+
 import {attach} from 'sketch-attach'
 import {
   withTick,
   withResize,
   withInteraction,
-  BaseApplication,
+  CtxApplication,
 } from 'sketch-application'
 
-export function loop(opts?: Attachment): Application {
+export function loop(opts?: Attachment) {
   const {canvas} = attach(opts)
-  const app = new Application(canvas)
-  return app
+  return new Application(canvas)
 }
 
-export const Application = withInteraction(
-  withTick(withResize(BaseApplication))
-)
-export type Application = TickApplication &
-  ResizeApplication &
-  InteractiveApplication
+export const Application = withInteraction<
+  ResizeEvent | TickEvent | InteractionEvent,
+  TickApplication & typeof CtxApplication
+>(withTick(withResize(CtxApplication)))

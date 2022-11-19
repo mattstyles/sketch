@@ -7,9 +7,8 @@ export interface Event {
 }
 
 // @TODO this API is highly subject to change
-export class BaseApplication {
+export class BaseApplication<E extends Event> {
   canvas: HTMLCanvasElement
-  ctx: CanvasRenderingContext2D
 
   // @TODO this would be better a protected which we should be able to do but our current TS config moans about it as protected can not be expressed in d.ts
   _events: Map<string, Map<string, (...args: any[]) => void>>
@@ -21,15 +20,9 @@ export class BaseApplication {
     this.canvas = canvas
     this._events = new Map()
     this._disposers = new Set()
-
-    const ctx = createContext({canvas: this.canvas})
-    if (ctx == null) {
-      throw new Error('Erroring creating context')
-    }
-    this.ctx = ctx
   }
 
-  on(event: Event): () => void {
+  on(event: E): () => void {
     const id = uuid()
     if (!this._events.has(event.type)) {
       this._events.set(event.type, new Map())
@@ -52,5 +45,19 @@ export class BaseApplication {
     for (let fn of this._disposers) {
       fn()
     }
+  }
+}
+
+export class CtxApplication<E extends Event> extends BaseApplication<E> {
+  ctx: CanvasRenderingContext2D
+
+  constructor(canvas: HTMLCanvasElement) {
+    super(canvas)
+
+    const ctx = createContext({canvas: this.canvas})
+    if (ctx == null) {
+      throw new Error('Erroring creating context')
+    }
+    this.ctx = ctx
   }
 }

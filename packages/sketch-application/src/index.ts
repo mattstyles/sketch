@@ -1,10 +1,15 @@
 export type {Event} from './application'
-export type {ResizeEvent, TickEvent, InteractionEvent} from './mixins'
 
-export {BaseApplication} from './application'
-export {withResize, withTick, withInteraction} from './mixins'
+export {BaseApplication, CtxApplication} from './application'
+
+export {withResize} from './mixins/resize'
+export type {ResizeApplication, ResizeEvent} from './mixins/resize'
+
+export {withTick} from './mixins/tick'
+export type {TickApplication, TickEvent} from './mixins/tick'
+
+export {withInteraction} from './mixins/interaction'
 export type {
-  ResizeApplication,
-  TickApplication,
   InteractiveApplication,
-} from './mixins'
+  InteractionEvent,
+} from './mixins/interaction'

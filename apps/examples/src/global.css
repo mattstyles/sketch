@@ -12,6 +12,11 @@ body {
   margin: 0;
 }
 
+.screen {
+  width: 100vw;
+  height: 100vh;
+}
+
 .content {
   max-width: 100%;
   width: var(--content-width);

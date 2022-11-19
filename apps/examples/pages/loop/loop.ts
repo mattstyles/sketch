@@ -29,10 +29,17 @@ function render() {
     )
     app.ctx.stroke()
   }
+
+  app.ctx.beginPath()
+  app.ctx.fillStyle = '#fff'
+  app.ctx.arc(gx, gy, 20, 0, Math.PI * 2)
+  app.ctx.fill()
 }
 
 let sizeFactor = 1
 let time = 0
+let gx = 0
+let gy = 0
 app.on({
   type: 'resize',
   action: render,
@@ -71,6 +78,9 @@ app.on({
     // console.log('pointer move', point)
     pointerX.innerHTML = point.x.toFixed(2)
     pointerY.innerHTML = point.y.toFixed(2)
+
+    gx = point.x
+    gy = point.y
   },
 })
 

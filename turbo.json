@@ -11,6 +11,9 @@
     "dev": {
       "cache": false
     },
+    "clean": {
+      "outputs": []
+    },
     "test": {
       "dependsOn": ["^build"],
       "outputs": []

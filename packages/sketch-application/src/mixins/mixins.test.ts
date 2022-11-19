@@ -4,7 +4,7 @@
 
 import {describe, test, expect, jest} from '@jest/globals'
 
-import {withResize, withTick, BaseApplication} from './'
+import {withResize, withTick, BaseApplication} from '../'
 
 const ResizeApplication = withResize(BaseApplication)
 const TickApplication = withTick(BaseApplication)
