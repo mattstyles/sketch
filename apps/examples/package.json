@@ -3,11 +3,12 @@
   "version": "0.3.1",
   "private": true,
   "scripts": {
-    "dev": "parcel pages/*.html pages/**/*.html",
+    "dev": "parcel pages/*.html pages/**/*.html --public-url /",
     "clean": "del dist",
     "build": "pnpm run clean && parcel build pages/*.html pages/**/*.html --public-url /sketch"
   },
   "dependencies": {
+    "pixi.js": "^7.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sketch-canvas": "workspace:*",
@@ -15,6 +16,7 @@
     "sketch-context": "workspace:*",
     "sketch-fit": "workspace:*",
     "sketch-loop": "workspace:*",
+    "sketch-pixi-app": "workspace:*",
     "sketch-react-app": "workspace:*",
     "sketch-react-loop": "workspace:*",
     "ui": "workspace:*"
@@ -26,7 +28,7 @@
     "del-cli": "^5.0.0",
     "eslint": "7.32.0",
     "eslint-config-custom": "workspace:*",
-    "parcel": "^2.7.0",
+    "parcel": "^2.8.0",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.3"
   }

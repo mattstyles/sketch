@@ -26,7 +26,8 @@
   "alias": {
     "process": {
       "global": "{}"
-    }
+    },
+    "url": false
   },
   "packageManager": "pnpm@7.12.1"
 }
