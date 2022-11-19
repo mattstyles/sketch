@@ -1,2 +1,0 @@
-:root{--content-width:640px;--text-color:#444;--background-color:#fffdfc}html,body{background-color:var(--background-color);color:var(--text-color);margin:0;font-family:sans-serif}.content{max-width:100%;width:var(--content-width)}.content.padding{padding:8px}.overlay{background-color:#0000001f;border-radius:3px;padding:8px}.absolute{position:absolute}.absolute.top-right{top:16px;right:16px}.text-on-dark{color:#fff}p.text{margin:0;line-height:1.6}
-/*# sourceMappingURL=index.7c8c4020.css.map */
