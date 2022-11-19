@@ -20,6 +20,8 @@ export function loop(opts?: Attachment) {
 }
 
 export const Application = withInteraction<
-  ResizeEvent | TickEvent | InteractionEvent,
+  | ResizeEvent<CtxApplication<ResizeEvent>>
+  | TickEvent<CtxApplication<TickEvent>>
+  | InteractionEvent<CtxApplication<InteractionEvent>>,
   TickApplication & typeof CtxApplication
 >(withTick(withResize(CtxApplication)))

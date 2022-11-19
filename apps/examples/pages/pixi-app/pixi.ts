@@ -1,4 +1,4 @@
-import {sketch} from 'sketch-pixi-app'
+import {sketch, PixiApplication} from 'sketch-pixi-app'
 
 import {Container, Graphics} from 'pixi.js'
 
@@ -25,7 +25,7 @@ stage.addChild(graphic)
 let radius = 30
 let gx = 300
 let gy = 300
-function render() {
+function render({app}: {app: PixiApplication<any>}) {
   let x = Math.sin(time) * radius
   let y = Math.cos(time) * radius
   graphic.position.set(x + gx, y + gy)

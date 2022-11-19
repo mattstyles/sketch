@@ -5,14 +5,14 @@ import {setCanvasSize} from 'sketch-canvas-size'
 
 import {BaseApplication} from '../application'
 
-export interface ResizeEvent extends Event {
+export interface ResizeEvent<T = ResizeApplication> extends Event {
   type: 'resize'
   action: ({
     app,
     width,
     height,
   }: {
-    app: ResizeApplication
+    app: T
     width: number
     height: number
   }) => void

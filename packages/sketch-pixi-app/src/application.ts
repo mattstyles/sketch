@@ -36,6 +36,8 @@ export class PixiApplication<E extends Event> extends BaseApplication<E> {
 }
 
 export const Application = withInteraction<
-  ResizeEvent | TickEvent | InteractionEvent,
+  | ResizeEvent<PixiApplication<ResizeEvent>>
+  | TickEvent<PixiApplication<TickEvent>>
+  | InteractionEvent<PixiApplication<InteractionEvent>>,
   TickApplication & typeof PixiApplication
 >(withTick(withResize(PixiApplication)))

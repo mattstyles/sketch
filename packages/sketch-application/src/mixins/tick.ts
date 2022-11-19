@@ -3,9 +3,9 @@ import type {Constructor} from '../constructor'
 
 import {BaseApplication} from '../application'
 
-export interface TickEvent extends Event {
+export interface TickEvent<T = TickApplication> extends Event {
   type: 'tick'
-  action: ({app, dt}: {app: TickApplication; dt: number}) => void
+  action: ({app, dt}: {app: T; dt: number}) => void
 }
 export type TickApplication = ReturnType<typeof withTick>
 export function withTick<

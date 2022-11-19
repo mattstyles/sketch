@@ -7,6 +7,7 @@ export function fit(opts?: Attachment) {
   return new Application(canvas)
 }
 
-const Application = withResize<ResizeEvent, typeof CtxApplication>(
-  CtxApplication
-)
+const Application = withResize<
+  ResizeEvent<CtxApplication<ResizeEvent>>,
+  typeof CtxApplication
+>(CtxApplication)

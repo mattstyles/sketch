@@ -4,9 +4,9 @@ import type {Constructor} from '../constructor'
 import {BaseApplication} from '../application'
 
 export type Point = {x: number; y: number}
-export interface InteractionEvent extends Event {
+export interface InteractionEvent<T = InteractiveApplication> extends Event {
   type: 'pointerdown' | 'pointerup' | 'pointermove'
-  action: ({app, point}: {app: InteractiveApplication; point: Point}) => void
+  action: ({app, point}: {app: T; point: Point}) => void
 }
 export type InteractiveApplication = ReturnType<typeof withInteraction>
 export function withInteraction<
