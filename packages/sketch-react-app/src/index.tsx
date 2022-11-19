@@ -1,17 +1,18 @@
 import type {Application} from 'sketch-loop'
+import type {CtxApplication} from 'sketch-application'
 import {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {loop} from 'sketch-loop'
 
 export type {Application} from 'sketch-loop'
 
 type ApplicationContext = {
-  app: Application | null
-  setApp: (app: Application | null) => void
+  app: CtxApplication<any> | null
+  setApp: (app: CtxApplication<any> | null) => void
 } | null
 const applicationContext = createContext<ApplicationContext>(null)
 
 export function SketchProvider({children}: {children: React.ReactNode}) {
-  const [app, setApp] = useState<Application | null>(null)
+  const [app, setApp] = useState<CtxApplication<any> | null>(null)
   return (
     <applicationContext.Provider
       value={{
@@ -40,6 +41,7 @@ export function SketchAttachment() {
       app.start()
       ctx.setApp(app)
     } else {
+      // @ts-ignore
       ctx.app.start()
     }
 
@@ -52,13 +54,13 @@ export function SketchAttachment() {
   return <canvas ref={canvas}></canvas>
 }
 
-export function useSketchApp(): Application | null {
+export function useSketchApp(): CtxApplication<any> | null {
   const ctx = useContext(applicationContext)
   return ctx?.app ?? null
 }
 
 export function useSketchTick(
-  onTick: ({dt, app}: {dt: number; app: Application}) => void
+  onTick: ({dt, app}: {dt: number; app: CtxApplication<any>}) => void
 ): void {
   const app = useSketchApp()
   useEffect(() => {

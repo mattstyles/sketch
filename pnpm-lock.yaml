@@ -340,12 +340,14 @@ importers:
       jest-environment-jsdom: ^29.2.0
       react: ^18.2.0
       react-dom: 18.2.0
+      sketch-application: workspace:*
       sketch-loop: workspace:*
       ts-jest: ^29.0.3
       tsconfig: workspace:*
       tsup: ^6.2.3
       typescript: ^4.8.4
     dependencies:
+      sketch-application: link:../sketch-application
       sketch-loop: link:../sketch-loop
     devDependencies:
       '@jest/globals': 29.2.0
@@ -381,12 +383,14 @@ importers:
       jest-environment-jsdom: ^29.2.0
       react: ^18.2.0
       react-dom: 18.2.0
+      sketch-application: workspace:*
       sketch-loop: workspace:*
       ts-jest: ^29.0.3
       tsconfig: workspace:*
       tsup: ^6.2.3
       typescript: ^4.8.4
     dependencies:
+      sketch-application: link:../sketch-application
       sketch-loop: link:../sketch-loop
     devDependencies:
       '@jest/globals': 29.2.0

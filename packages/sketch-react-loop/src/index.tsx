@@ -1,11 +1,12 @@
 import type {Application} from 'sketch-loop'
+import type {CtxApplication} from 'sketch-application'
 import {useEffect, useRef} from 'react'
 import {loop} from 'sketch-loop'
 
 export type {Application} from 'sketch-loop'
 
 export type Props = {
-  onTick: (opts: {app: Application; dt: number}) => void
+  onTick: (opts: {app: CtxApplication<any>; dt: number}) => void
 }
 export function SketchLoop({onTick = ({}) => {}}: Props) {
   const ref = useRef<HTMLCanvasElement | null>(null)
