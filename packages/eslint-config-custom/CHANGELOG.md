@@ -1,5 +1,11 @@
 # eslint-config-custom
 
+## 0.4.0
+
+### Minor Changes
+
+- Adding pixi-app
+
 ## 0.3.1
 
 ### Patch Changes

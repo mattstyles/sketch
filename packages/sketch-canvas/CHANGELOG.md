@@ -1,5 +1,16 @@
 # sketch-canvas
 
+## 0.4.0
+
+### Minor Changes
+
+- Adding pixi-app
+
+### Patch Changes
+
+- Updated dependencies
+  - sketch-canvas-size@0.4.0
+
 ## 0.3.1
 
 ### Patch Changes
