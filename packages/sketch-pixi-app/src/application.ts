@@ -41,3 +41,4 @@ export const Application = withInteraction<
   | InteractionEvent<PixiApplication<InteractionEvent>>,
   TickApplication & typeof PixiApplication
 >(withTick(withResize(PixiApplication)))
+export type ApplicationInstance = InstanceType<typeof Application>

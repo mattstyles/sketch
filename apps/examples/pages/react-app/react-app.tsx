@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {useState} from 'react'
-import type {Application} from 'sketch-react-app'
+import type {ApplicationInstance} from 'sketch-react-app'
 
 import {createRoot} from 'react-dom/client'
 import {
@@ -62,7 +62,7 @@ function Controls() {
 }
 
 let time = 0
-function render({app, dt}: {app: Application; dt: number}) {
+function render({app, dt}: {app: ApplicationInstance; dt: number}) {
   time = time + dt / 500
 
   const padding = 16
