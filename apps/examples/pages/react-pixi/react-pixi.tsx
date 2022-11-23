@@ -81,16 +81,3 @@ function render({app, dt}: {app: ApplicationInstance; dt: number}) {
     scale
   )
 }
-
-// const imageUrl = new URL(
-//   '~/public/tiles.png?as=webp&width=100',
-//   import.meta.url
-// )
-// async function load() {
-//   const asset = await Assets.load(imageUrl.toString())
-//   console.log('loaded', asset)
-//   const sprite = Sprite.from(asset)
-//
-//
-// }
-// load()
