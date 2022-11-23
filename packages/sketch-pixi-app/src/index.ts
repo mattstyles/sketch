@@ -16,6 +16,7 @@ export function sketch(opts?: Attachment, pixiOptions?: IApplicationOptions) {
     type: 'resize',
     action: ({app}) => {
       app.pixi.renderer.resize(app.canvas.width, app.canvas.height)
+      app.pixi.render()
     },
   })
 

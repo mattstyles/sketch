@@ -1,8 +1,10 @@
-import type {ApplicationInstance} from 'sketch-loop'
-import {createContext, useContext, useEffect, useRef, useState} from 'react'
-import {loop} from 'sketch-loop'
+import type {ApplicationInstance} from 'sketch-pixi-app'
 
-export type {ApplicationInstance} from 'sketch-loop'
+import {createContext, useContext, useEffect, useRef, useState} from 'react'
+
+import {sketch} from 'sketch-pixi-app'
+
+export type {ApplicationInstance} from 'sketch-pixi-app'
 
 type ApplicationContext = {
   app: ApplicationInstance | null
@@ -15,7 +17,7 @@ export function SketchProvider({
   app,
 }: {
   children: React.ReactNode
-  app?: ApplicationInstance
+  app?: ApplicationInstance | null
 }) {
   const [application, setApp] = useState<ApplicationInstance | null>(
     app ?? null
@@ -44,7 +46,7 @@ export function SketchAttachment() {
     }
 
     if (ctx.app == null) {
-      const app = loop({canvas: canvas.current})
+      const app = sketch({canvas: canvas.current})
       app.start()
       ctx.setApp(app)
     } else {
