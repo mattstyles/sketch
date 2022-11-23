@@ -1,5 +1,11 @@
 # jest-config
 
+## 0.5.0
+
+### Minor Changes
+
+- Sketch-react-pixi
+
 ## 0.4.0
 
 ### Minor Changes

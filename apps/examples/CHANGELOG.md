@@ -1,5 +1,24 @@
 # examples
 
+## 0.5.0
+
+### Minor Changes
+
+- Sketch-react-pixi
+
+### Patch Changes
+
+- Updated dependencies
+  - sketch-canvas@0.5.0
+  - sketch-canvas-size@0.5.0
+  - sketch-context@0.5.0
+  - sketch-fit@0.5.0
+  - sketch-loop@0.5.0
+  - sketch-pixi-app@0.5.0
+  - sketch-react-app@0.5.0
+  - sketch-react-loop@0.5.0
+  - sketch-react-pixi@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes

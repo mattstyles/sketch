@@ -1,5 +1,17 @@
 # sketch-application
 
+## 0.5.0
+
+### Minor Changes
+
+- Sketch-react-pixi
+
+### Patch Changes
+
+- Updated dependencies
+  - sketch-canvas-size@0.5.0
+  - sketch-context@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes
