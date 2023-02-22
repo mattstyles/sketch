@@ -11,8 +11,8 @@ importers:
     devDependencies:
       '@changesets/cli': 2.25.0
       eslint-config-custom: link:packages/eslint-config-custom
-      prettier: 2.8.0
-      turbo: 1.6.3
+      prettier: 2.8.4
+      turbo: 1.8.1
 
   apps/examples:
     specifiers:
@@ -75,7 +75,7 @@ importers:
       eslint: 7.32.0
       eslint-config-next: 12.3.1_3rubbgt5ekhqrcgx4uwls3neim
       eslint-config-prettier: 8.5.0_eslint@7.32.0
-      eslint-config-turbo: 0.0.4_eslint@7.32.0
+      eslint-config-turbo: 0.0.8_eslint@7.32.0
       eslint-plugin-react: 7.31.8_eslint@7.32.0
     devDependencies:
       typescript: 4.8.4
@@ -95,7 +95,7 @@ importers:
       '@jest/globals': ^29.2.0
       '@types/jest': ^29.1.2
       '@types/uuid': ^8.3.4
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -115,11 +115,11 @@ importers:
       '@jest/globals': 29.2.0
       '@types/jest': 29.1.2
       '@types/uuid': 8.3.4
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
       tsconfig: link:../tsconfig
       tsup: 6.2.3_typescript@4.8.4
@@ -207,7 +207,7 @@ importers:
     specifiers:
       '@jest/globals': ^29.2.0
       '@types/jest': ^29.1.2
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -222,11 +222,11 @@ importers:
     devDependencies:
       '@jest/globals': 29.2.0
       '@types/jest': 29.1.2
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
       tsconfig: link:../tsconfig
       tsup: 6.2.3_typescript@4.8.4
@@ -236,7 +236,7 @@ importers:
     specifiers:
       '@jest/globals': ^29.2.0
       '@types/jest': ^29.1.2
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -253,11 +253,11 @@ importers:
     devDependencies:
       '@jest/globals': 29.2.0
       '@types/jest': 29.1.2
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
       tsconfig: link:../tsconfig
       tsup: 6.2.3_typescript@4.8.4
@@ -267,7 +267,7 @@ importers:
     specifiers:
       '@jest/globals': ^29.2.0
       '@types/jest': ^29.1.2
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -284,11 +284,11 @@ importers:
     devDependencies:
       '@jest/globals': 29.2.0
       '@types/jest': 29.1.2
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
       tsconfig: link:../tsconfig
       tsup: 6.2.3_typescript@4.8.4
@@ -298,7 +298,7 @@ importers:
     specifiers:
       '@jest/globals': ^29.2.0
       '@types/jest': ^29.1.2
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -317,11 +317,11 @@ importers:
     devDependencies:
       '@jest/globals': 29.2.0
       '@types/jest': 29.1.2
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
       tsconfig: link:../tsconfig
       tsup: 6.2.3_typescript@4.8.4
@@ -335,7 +335,7 @@ importers:
       '@types/jest': ^29.1.2
       '@types/react': ^18.0.21
       '@types/testing-library__jest-dom': ^5.14.5
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -356,11 +356,11 @@ importers:
       '@types/jest': 29.1.2
       '@types/react': 18.0.21
       '@types/testing-library__jest-dom': 5.14.5
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
@@ -376,7 +376,7 @@ importers:
       '@types/jest': ^29.1.2
       '@types/react': ^18.0.21
       '@types/testing-library__jest-dom': ^5.14.5
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -399,11 +399,11 @@ importers:
       '@types/jest': 29.1.2
       '@types/react': 18.0.21
       '@types/testing-library__jest-dom': 5.14.5
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
@@ -419,7 +419,7 @@ importers:
       '@types/jest': ^29.1.2
       '@types/react': ^18.0.21
       '@types/testing-library__jest-dom': ^5.14.5
-      canvas: ^2.10.1
+      canvas: ^2.11.0
       del-cli: ^5.0.0
       jest: ^29.2.0
       jest-config: workspace:*
@@ -440,11 +440,11 @@ importers:
       '@types/jest': 29.1.2
       '@types/react': 18.0.21
       '@types/testing-library__jest-dom': 5.14.5
-      canvas: 2.10.1
+      canvas: 2.11.0
       del-cli: 5.0.0
       jest: 29.2.0
       jest-config: link:../jest-config
-      jest-environment-jsdom: 29.2.0_canvas@2.10.1
+      jest-environment-jsdom: 29.2.0_canvas@2.11.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       ts-jest: 29.0.3_xmswqkytyggzohyqir5uwbxjce
@@ -830,7 +830,7 @@ packages:
       fs-extra: 7.0.1
       lodash.startcase: 4.4.0
       outdent: 0.5.0
-      prettier: 2.8.0
+      prettier: 2.8.4
       resolve-from: 5.0.0
       semver: 5.7.1
     dev: true
@@ -997,7 +997,7 @@ packages:
       '@changesets/types': 5.2.0
       fs-extra: 7.0.1
       human-id: 1.0.2
-      prettier: 2.8.0
+      prettier: 2.8.4
     dev: true
 
   /@esbuild/android-arm/0.15.11:
@@ -3079,8 +3079,8 @@ packages:
     resolution: {integrity: sha512-aFO1r+g6R7TW+PNQxKzjITwLOyDhVRLjW0LcwS/HCZGUUKTGNp9+IwLC4xyDSZBygVL/mxaFR3HIV6wEKQuSzw==}
     dev: true
 
-  /canvas/2.10.1:
-    resolution: {integrity: sha512-29pIjn9uwTUsIgJUNd7GXxKk8sg4iyJwLm1wIilNIqX1mVzXSc2nUij9exW1LqNpis1d2ebMYfMqTWcokZ4pdA==}
+  /canvas/2.11.0:
+    resolution: {integrity: sha512-bdTjFexjKJEwtIo0oRx8eD4G2yWoUOXP9lj279jmQ2zMnTQhT8C3512OKz3s+ZOaQlLbE7TuVvRDYDB3Llyy5g==}
     engines: {node: '>=6'}
     requiresBuild: true
     dependencies:
@@ -3990,13 +3990,13 @@ packages:
       eslint: 7.32.0
     dev: false
 
-  /eslint-config-turbo/0.0.4_eslint@7.32.0:
-    resolution: {integrity: sha512-HErPS/wfWkSdV9Yd2dDkhZt3W2B78Ih/aWPFfaHmCMjzPalh+5KxRRGTf8MOBQLCebcWJX0lP1Zvc1rZIHlXGg==}
+  /eslint-config-turbo/0.0.8_eslint@7.32.0:
+    resolution: {integrity: sha512-ijj6uv0QX2kWahg3OYnTK1/q4MueXsqY2uE4MP9yeUA5CzVhL7GU+biKlv1BfMMqPltixHUcpZoW4yyNLCnMiw==}
     peerDependencies:
-      eslint: ^7.23.0 || ^8.0.0
+      eslint: '>6.6.0'
     dependencies:
       eslint: 7.32.0
-      eslint-plugin-turbo: 0.0.4_eslint@7.32.0
+      eslint-plugin-turbo: 0.0.8_eslint@7.32.0
     dev: false
 
   /eslint-import-resolver-node/0.3.6:
@@ -4141,10 +4141,10 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: false
 
-  /eslint-plugin-turbo/0.0.4_eslint@7.32.0:
-    resolution: {integrity: sha512-dfmYE/iPvoJInQq+5E/0mj140y/rYwKtzZkn3uVK8+nvwC5zmWKQ6ehMWrL4bYBkGzSgpOndZM+jOXhPQ2m8Cg==}
+  /eslint-plugin-turbo/0.0.8_eslint@7.32.0:
+    resolution: {integrity: sha512-pExSCmjWw/KFKb3/0PVqxiWb30FbcwDEf6kKv3alvNBSVEzDHalyAGHc9klbLSG+nFmbkfNE3Ky/UHDryCqt8g==}
     peerDependencies:
-      eslint: ^7.23.0 || ^8.0.0
+      eslint: '>6.6.0'
     dependencies:
       eslint: 7.32.0
     dev: false
@@ -5197,7 +5197,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /jest-environment-jsdom/29.2.0_canvas@2.10.1:
+  /jest-environment-jsdom/29.2.0_canvas@2.11.0:
     resolution: {integrity: sha512-DgHbBxC4RmHpDLFLMt00NjXXimGvtNALRyxQYOo3e6vwq1qsIDqXsEZiuEpjTg0BueENE1mx8BKFKHXArEdRQQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
@@ -5211,10 +5211,10 @@ packages:
       '@jest/types': 29.2.0
       '@types/jsdom': 20.0.0
       '@types/node': 17.0.45
-      canvas: 2.10.1
+      canvas: 2.11.0
       jest-mock: 29.2.0
       jest-util: 29.2.0
-      jsdom: 20.0.1_canvas@2.10.1
+      jsdom: 20.0.1_canvas@2.11.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -5556,7 +5556,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /jsdom/20.0.1_canvas@2.10.1:
+  /jsdom/20.0.1_canvas@2.11.0:
     resolution: {integrity: sha512-pksjj7Rqoa+wdpkKcLzQRHhJCEE42qQhl/xLMUKHgoSejaKOdaXEAnqs6uDNwMl/fciHTzKeR8Wm8cw7N+g98A==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -5568,7 +5568,7 @@ packages:
       abab: 2.0.6
       acorn: 8.8.0
       acorn-globals: 7.0.1
-      canvas: 2.10.1
+      canvas: 2.11.0
       cssom: 0.5.0
       cssstyle: 2.3.0
       data-urls: 3.0.2
@@ -6576,8 +6576,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier/2.8.0:
-    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -7533,65 +7533,65 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /turbo-darwin-64/1.6.3:
-    resolution: {integrity: sha512-QmDIX0Yh1wYQl0bUS0gGWwNxpJwrzZU2GIAYt3aOKoirWA2ecnyb3R6ludcS1znfNV2MfunP+l8E3ncxUHwtjA==}
+  /turbo-darwin-64/1.8.1:
+    resolution: {integrity: sha512-H7pxGF/vsYG7kbY+vB8h+3r8VXn2L6hhYQi0XWA+EjZ1e2zu7+TzEMRWFYmvJPx8TRo5cV5txtg0I22/Y7bxUA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.6.3:
-    resolution: {integrity: sha512-75DXhFpwE7CinBbtxTxH08EcWrxYSPFow3NaeFwsG8aymkWXF+U2aukYHJA6I12n9/dGqf7yRXzkF0S/9UtdyQ==}
+  /turbo-darwin-arm64/1.8.1:
+    resolution: {integrity: sha512-zMcvplVGluR6v4oJXW7S1/R9QFsHdDkXMhPq8PIdvT3HwTb69ms0MNv7aKiQ0ZFy5D/eKCTyBRUFZvjorZmBqA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.6.3:
-    resolution: {integrity: sha512-O9uc6J0yoRPWdPg9THRQi69K6E2iZ98cRHNvus05lZbcPzZTxJYkYGb5iagCmCW/pq6fL4T4oLWAd6evg2LGQA==}
+  /turbo-linux-64/1.8.1:
+    resolution: {integrity: sha512-eJNx8iWDn5Lt8d0221RFd6lBjViLiPCVWNFF5JtqOohgRYplvepY3y/THa1GivMxY4px6zjTiy2oPE/VscVP4w==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.6.3:
-    resolution: {integrity: sha512-dCy667qqEtZIhulsRTe8hhWQNCJO0i20uHXv7KjLHuFZGCeMbWxB8rsneRoY+blf8+QNqGuXQJxak7ayjHLxiA==}
+  /turbo-linux-arm64/1.8.1:
+    resolution: {integrity: sha512-hFZkm8tq9kLE8tdbOzD6EbNzftdzMR4JEuuoKC6AbTzx1ZsWRvXJ/BGTeSH9/dYYm/wfuIEUiOP7HeXWiZRx7g==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.6.3:
-    resolution: {integrity: sha512-lKRqwL3mrVF09b9KySSaOwetehmGknV9EcQTF7d2dxngGYYX1WXoQLjFP9YYH8ZV07oPm+RUOAKSCQuDuMNhiA==}
+  /turbo-windows-64/1.8.1:
+    resolution: {integrity: sha512-o3oDg0lTYZl5KZD3Mi753On2vQT51unIiungoUmHDCeDH5JXfWPFu+6p+GAoIyRwQkZPvaEzMLuUtRgklKcBJw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.6.3:
-    resolution: {integrity: sha512-BXY1sDPEA1DgPwuENvDCD8B7Hb0toscjus941WpL8CVd10hg9pk/MWn9CNgwDO5Q9ks0mw+liDv2EMnleEjeNA==}
+  /turbo-windows-arm64/1.8.1:
+    resolution: {integrity: sha512-NDYr2Mra21KOdl18BhMRoH2jQmlu+oqkpqRd+cGB8+c5P0B6LDVCM83cfcXQ+PNqX9S3Y1eZDRENZJx9I03sSw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.6.3:
-    resolution: {integrity: sha512-FtfhJLmEEtHveGxW4Ye/QuY85AnZ2ZNVgkTBswoap7UMHB1+oI4diHPNyqrQLG4K1UFtCkjOlVoLsllUh/9QRw==}
+  /turbo/1.8.1:
+    resolution: {integrity: sha512-g8RltmG5zd0nYbKpkBQwnTSXTWUiup9+yileQ1TETNzpjxI3TL5k7kt2WkgUHEqR947IPUV+ckIduZHVITJmIQ==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.6.3
-      turbo-darwin-arm64: 1.6.3
-      turbo-linux-64: 1.6.3
-      turbo-linux-arm64: 1.6.3
-      turbo-windows-64: 1.6.3
-      turbo-windows-arm64: 1.6.3
+      turbo-darwin-64: 1.8.1
+      turbo-darwin-arm64: 1.8.1
+      turbo-linux-64: 1.8.1
+      turbo-linux-arm64: 1.8.1
+      turbo-windows-64: 1.8.1
+      turbo-windows-arm64: 1.8.1
     dev: true
 
   /type-check/0.3.2:
