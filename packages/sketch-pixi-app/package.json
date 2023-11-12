@@ -16,7 +16,8 @@
   "author": "Matt Styles",
   "license": "MIT",
   "dependencies": {
-    "pixi.js": "^7.0.3",
+    "pixi.js": "^7.3.2",
+    "@pixi/utils": "^7.3.2",
     "sketch-application": "workspace:*",
     "sketch-attach": "workspace:*"
   },
