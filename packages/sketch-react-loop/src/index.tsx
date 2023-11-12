@@ -7,7 +7,9 @@ export type {Application} from 'sketch-loop'
 
 export type TickAction = TickEvent<ApplicationInstance>['action']
 export type ResizeAction = ResizeEvent<ApplicationInstance>['action']
-type InteractionActionParams = Parameters<InteractionEvent<ApplicationInstance>['action']>[0]
+type InteractionActionParams = Parameters<
+  InteractionEvent<ApplicationInstance>['action']
+>[0]
 interface InteractionParams extends InteractionActionParams {
   type: InteractionEvent<ApplicationInstance>['type']
 }
@@ -34,7 +36,7 @@ export function SketchLoop({onTick, onResize, onInteraction}: Props) {
     if (onResize != null) {
       app.on({
         type: 'resize',
-        action: onResize
+        action: onResize,
       })
     }
     if (onInteraction != null) {
@@ -43,22 +45,22 @@ export function SketchLoop({onTick, onResize, onInteraction}: Props) {
           if (onInteraction != null) {
             onInteraction({
               type: type,
-              ...args
+              ...args,
             })
           }
         }
       }
       app.on({
         type: 'pointerdown',
-        action: createInteractionEvent('pointerdown')
+        action: createInteractionEvent('pointerdown'),
       })
       app.on({
         type: 'pointermove',
-        action: createInteractionEvent('pointermove')
+        action: createInteractionEvent('pointermove'),
       })
       app.on({
         type: 'pointerup',
-        action: createInteractionEvent('pointerup')
+        action: createInteractionEvent('pointerup'),
       })
     }
     app.start()
@@ -66,6 +68,6 @@ export function SketchLoop({onTick, onResize, onInteraction}: Props) {
     return () => {
       app.dispose()
     }
-  }, [ref, onTick])
+  }, [ref, onTick, onInteraction, onResize])
   return <canvas ref={ref}></canvas>
 }
