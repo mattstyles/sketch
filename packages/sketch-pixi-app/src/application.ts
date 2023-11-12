@@ -21,7 +21,7 @@ export class PixiApplication<E extends Event> extends BaseApplication<E> {
 
   constructor(
     canvas: HTMLCanvasElement,
-    pixiOptions: IApplicationOptions = {}
+    pixiOptions: Partial<IApplicationOptions> = {}
   ) {
     super(canvas)
 
