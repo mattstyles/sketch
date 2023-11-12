@@ -7,13 +7,6 @@
     "clean": "del dist",
     "build": "pnpm run clean && parcel build pages/*.html pages/**/*.html --public-url /sketch"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "svgo": "2.8.0"
-      }
-    }
-  },
   "dependencies": {
     "pixi.js": "^7.3.2",
     "@pixi/utils": "^7.3.2",
