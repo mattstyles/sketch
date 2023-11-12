@@ -1,3 +1,4 @@
+import type {TickEvent as TickHandler} from 'sketch-application'
 import type {ApplicationInstance} from 'sketch-loop'
 import {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {loop} from 'sketch-loop'
@@ -18,7 +19,7 @@ export function SketchProvider({
   app?: ApplicationInstance
 }) {
   const [application, setApp] = useState<ApplicationInstance | null>(
-    app ?? null
+    app ?? null,
   )
   return (
     <applicationContext.Provider
@@ -65,9 +66,10 @@ export function useSketchApp(): ApplicationInstance | null {
   return ctx?.app ?? null
 }
 
-export function useSketchTick(
-  onTick: ({dt, app}: {dt: number; app: ApplicationInstance}) => void
-): void {
+export type TickEvent = Parameters<
+  TickHandler<ApplicationInstance>['action']
+>[0]
+export function useSketchTick(onTick: ({dt, app}: TickEvent) => void): void {
   const app = useSketchApp()
   useEffect(() => {
     if (app == null) {

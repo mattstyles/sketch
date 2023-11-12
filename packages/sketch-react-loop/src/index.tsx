@@ -1,14 +1,17 @@
-import type {Application} from 'sketch-loop'
-import type {CtxApplication} from 'sketch-application'
+import type {ApplicationInstance} from 'sketch-loop'
+import type {CtxApplication, TickEvent as TickHandler} from 'sketch-application'
 import {useEffect, useRef} from 'react'
 import {loop} from 'sketch-loop'
 
 export type {Application} from 'sketch-loop'
 
+export type TickEvent = Parameters<
+  TickHandler<ApplicationInstance>['action']
+>[0]
 export type Props = {
-  onTick: (opts: {app: CtxApplication<any>; dt: number}) => void
+  onTick: (opts: TickEvent) => void
 }
-export function SketchLoop({onTick = ({}) => {}}: Props) {
+export function SketchLoop({onTick}: Props) {
   const ref = useRef<HTMLCanvasElement | null>(null)
   useEffect(() => {
     if (ref == null || ref.current == null) {

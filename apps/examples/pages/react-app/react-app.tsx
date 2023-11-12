@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {useState} from 'react'
-import type {ApplicationInstance} from 'sketch-react-app'
+import type {ApplicationInstance, TickEvent} from 'sketch-react-app'
 
 import {createRoot} from 'react-dom/client'
 import {
@@ -62,7 +62,7 @@ function Controls() {
 }
 
 let time = 0
-function render({app, dt}: {app: ApplicationInstance; dt: number}) {
+function render({app, dt}: TickEvent) {
   time = time + dt / 500
 
   const padding = 16
@@ -70,7 +70,7 @@ function render({app, dt}: {app: ApplicationInstance; dt: number}) {
     0,
     app.ctx.canvas.height * 0.85,
     app.ctx.canvas.width,
-    app.ctx.canvas.height * 0.25
+    app.ctx.canvas.height * 0.25,
   )
   gradient.addColorStop(0, '#85ffbd')
   gradient.addColorStop(1, '#fffb7d')
@@ -79,7 +79,7 @@ function render({app, dt}: {app: ApplicationInstance; dt: number}) {
     0 + padding,
     0 + padding,
     app.ctx.canvas.width - padding * 2,
-    app.ctx.canvas.height - padding * 2
+    app.ctx.canvas.height - padding * 2,
   )
 
   app.ctx.beginPath()
@@ -92,7 +92,7 @@ function render({app, dt}: {app: ApplicationInstance; dt: number}) {
       0.25 *
       (1 + Math.sin(time) * 0.2),
     0,
-    Math.PI * 2
+    Math.PI * 2,
   )
   app.ctx.stroke()
 }

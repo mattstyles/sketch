@@ -16,6 +16,7 @@
   "author": "Matt Styles",
   "license": "MIT",
   "dependencies": {
+    "sketch-application": "workspace:^",
     "sketch-loop": "workspace:*"
   },
   "peerDependencies": {

@@ -461,6 +461,9 @@ importers:
 
   packages/sketch-react-app:
     dependencies:
+      sketch-application:
+        specifier: workspace:^
+        version: link:../sketch-application
       sketch-loop:
         specifier: workspace:*
         version: link:../sketch-loop
