@@ -1,6 +1,5 @@
 import * as React from 'react'
-
-import type {Props} from 'sketch-react-loop'
+import type {Props, InteractionAction} from 'sketch-react-loop'
 
 import {createRoot} from 'react-dom/client'
 import {SketchLoop} from 'sketch-react-loop'
@@ -12,13 +11,17 @@ root.render(<App />)
 function App() {
   return (
     <Container>
-      <SketchLoop onTick={render} />
+      <SketchLoop onTick={render} onInteraction={onInteractionEvent}/>
     </Container>
   )
 }
 
-function Container({children}: {children: React.ReactNode}) {
+function Container({children}: React.PropsWithChildren) {
   return <div style={{width: '100vw', height: '100vh'}}>{children}</div>
+}
+
+function onInteractionEvent({type, app, point}: Parameters<InteractionAction>[0]) {
+  console.log(type, '::', point, ',,')
 }
 
 let time = 0
