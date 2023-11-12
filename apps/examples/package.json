@@ -8,7 +8,8 @@
     "build": "pnpm run clean && parcel build pages/*.html pages/**/*.html --public-url /sketch"
   },
   "dependencies": {
-    "pixi.js": "^7.0.3",
+    "pixi.js": "^7.3.2",
+    "@pixi/utils": "^7.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sketch-canvas": "workspace:*",
