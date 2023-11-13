@@ -130,7 +130,7 @@ export function useSketchInteraction(onInteraction: InteractionAction): void {
       subscriptions.forEach((fn) => fn())
       subscriptions.clear()
     }
-  })
+  }, [onInteraction, app])
 }
 
 function createInteractionHandler(
@@ -145,4 +145,23 @@ function createInteractionHandler(
       })
     }
   }
+}
+
+export type ResizeAction = ResizeHandler<ApplicationInstance>
+export function useSketchResize(onResize: ResizeAction): void {
+  const app = useSketchApp()
+  useEffect(() => {
+    if (app == null) {
+      return
+    }
+
+    const unsubscribe = app.on({
+      type: 'resize',
+      action: onResize,
+    })
+
+    return () => {
+      unsubscribe()
+    }
+  }, [onResize, app])
 }
