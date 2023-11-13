@@ -3,19 +3,17 @@ import type {Constructor} from '../constructor'
 
 import {setCanvasSize} from 'sketch-canvas-size'
 
-import {BaseApplication} from '../application'
+import {BaseApplication, ActionHandler} from '../application'
 
-export interface ResizeEvent<T = ResizeApplication> extends Event {
-  type: 'resize'
-  action: ({
-    app,
-    width,
-    height,
-  }: {
+export interface ResizeHandler<T = ResizeApplication>
+  extends ActionHandler<{
     app: T
     width: number
     height: number
-  }) => void
+  }> {}
+export interface ResizeEvent<T = ResizeApplication> extends Event {
+  type: 'resize'
+  action: ResizeHandler<T>
 }
 
 export type ResizeApplication = ReturnType<typeof withResize>

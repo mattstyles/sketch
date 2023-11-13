@@ -1,9 +1,15 @@
 import type {Event} from '../application'
 import type {Constructor} from '../constructor'
 
-import {BaseApplication} from '../application'
+import {BaseApplication, ActionHandler} from '../application'
 
 export type Point = {x: number; y: number}
+export interface InteractionHandler<T = InteractiveApplication>
+  extends ActionHandler<{
+    app: T
+    point: Point
+  }> {}
+
 export interface InteractionEvent<T = InteractiveApplication> extends Event {
   type: 'pointerdown' | 'pointerup' | 'pointermove'
   action: ({app, point}: {app: T; point: Point}) => void

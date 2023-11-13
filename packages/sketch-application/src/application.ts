@@ -1,9 +1,10 @@
 import {v4 as uuid} from 'uuid'
 import {create as createContext} from 'sketch-context'
 
+export type ActionHandler<T extends unknown> = (params: T) => void
 export interface Event {
   type: string
-  action: (...args: any[]) => void
+  action: ActionHandler<any>
 }
 
 // @TODO this API is highly subject to change
@@ -11,7 +12,7 @@ export class BaseApplication<E extends Event> {
   canvas: HTMLCanvasElement
 
   // @TODO this would be better a protected which we should be able to do but our current TS config moans about it as protected can not be expressed in d.ts
-  _events: Map<string, Map<string, (...args: any[]) => void>>
+  _events: Map<string, Map<string, ActionHandler<unknown>>>
 
   // This should also be protected
   _disposers: Set<() => void>
