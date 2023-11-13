@@ -4,6 +4,7 @@ import type {
   TickHandler,
   ResizeHandler,
   InteractionHandler,
+  ActionHandler,
 } from 'sketch-application'
 import {useEffect, useRef} from 'react'
 import {loop} from 'sketch-loop'

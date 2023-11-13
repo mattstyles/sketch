@@ -1,4 +1,4 @@
-export type {Event} from './application'
+export type {Event, ActionHandler} from './application'
 
 export {BaseApplication, CtxApplication} from './application'
 

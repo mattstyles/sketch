@@ -1,6 +1,10 @@
 import * as React from 'react'
 import {useState} from 'react'
-import type {ApplicationInstance, TickEvent} from 'sketch-react-app'
+import type {
+  ApplicationInstance,
+  TickAction,
+  InteractionAction,
+} from 'sketch-react-app'
 
 import {createRoot} from 'react-dom/client'
 import {
@@ -8,6 +12,7 @@ import {
   SketchAttachment,
   useSketchApp,
   useSketchTick,
+  useSketchInteraction,
 } from 'sketch-react-app'
 
 const container = document.querySelector('.js-app') as HTMLElement
@@ -39,7 +44,7 @@ function Controls() {
   const [isRunning, setIsRunning] = useState(true)
 
   return (
-    <div className='overlay absolute top-right'>
+    <div className='overlay md absolute top-right'>
       <button
         disabled={app == null}
         onClick={() => {
@@ -57,12 +62,36 @@ function Controls() {
         }}>
         {isRunning ? 'Pause' : 'Resume'}
       </button>
+      <InteractionTrace />
+    </div>
+  )
+}
+
+function InteractionTrace() {
+  const [position, setPosition] = useState([0, 0])
+  const [type, setType] = useState<
+    Parameters<InteractionAction>[0]['type'] | null
+  >(null)
+  useSketchInteraction(
+    ({type, app, point}: Parameters<InteractionAction>[0]) => {
+      setPosition([point.x, point.y])
+      setType(type)
+    }
+  )
+
+  return (
+    <div>
+      <div className='spacer-md'></div>
+      <p className='text'>Type: {type}</p>
+      <p className='text'>
+        Position: [{position[0].toFixed(2)}, {position[1].toFixed(2)}]
+      </p>
     </div>
   )
 }
 
 let time = 0
-function render({app, dt}: TickEvent) {
+function render({app, dt}: Parameters<TickAction>[0]) {
   time = time + dt / 500
 
   const padding = 16
@@ -70,7 +99,7 @@ function render({app, dt}: TickEvent) {
     0,
     app.ctx.canvas.height * 0.85,
     app.ctx.canvas.width,
-    app.ctx.canvas.height * 0.25,
+    app.ctx.canvas.height * 0.25
   )
   gradient.addColorStop(0, '#85ffbd')
   gradient.addColorStop(1, '#fffb7d')
@@ -79,7 +108,7 @@ function render({app, dt}: TickEvent) {
     0 + padding,
     0 + padding,
     app.ctx.canvas.width - padding * 2,
-    app.ctx.canvas.height - padding * 2,
+    app.ctx.canvas.height - padding * 2
   )
 
   app.ctx.beginPath()
@@ -92,7 +121,7 @@ function render({app, dt}: TickEvent) {
       0.25 *
       (1 + Math.sin(time) * 0.2),
     0,
-    Math.PI * 2,
+    Math.PI * 2
   )
   app.ctx.stroke()
 }

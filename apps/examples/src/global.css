@@ -31,6 +31,9 @@ body {
   background-color: rgba(0, 0, 0, 0.12);
   border-radius: 3px;
 }
+.overlay.md {
+  width: 240px;
+}
 
 .absolute {
   position: absolute;
@@ -46,4 +49,8 @@ body {
 p.text {
   margin: 0;
   line-height: 1.6;
+}
+
+.spacer-md {
+  padding-top: 8px;
 }

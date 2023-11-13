@@ -1,4 +1,10 @@
-import type {TickEvent as TickHandler} from 'sketch-application'
+import type {
+  TickHandler,
+  ResizeHandler,
+  InteractionEvent,
+  InteractionHandler,
+  ActionHandler,
+} from 'sketch-application'
 import type {ApplicationInstance} from 'sketch-loop'
 import {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {loop} from 'sketch-loop'
@@ -19,7 +25,7 @@ export function SketchProvider({
   app?: ApplicationInstance
 }) {
   const [application, setApp] = useState<ApplicationInstance | null>(
-    app ?? null,
+    app ?? null
   )
   return (
     <applicationContext.Provider
@@ -66,10 +72,8 @@ export function useSketchApp(): ApplicationInstance | null {
   return ctx?.app ?? null
 }
 
-export type TickEvent = Parameters<
-  TickHandler<ApplicationInstance>['action']
->[0]
-export function useSketchTick(onTick: ({dt, app}: TickEvent) => void): void {
+export type TickAction = TickHandler<ApplicationInstance>
+export function useSketchTick(onTick: TickAction): void {
   const app = useSketchApp()
   useEffect(() => {
     if (app == null) {
@@ -85,4 +89,60 @@ export function useSketchTick(onTick: ({dt, app}: TickEvent) => void): void {
       unsubscribe()
     }
   }, [onTick, app])
+}
+
+type InteractionActionParams = Parameters<
+  InteractionHandler<ApplicationInstance>
+>[0]
+interface InteractionParams extends InteractionActionParams {
+  type: InteractionEvent<ApplicationInstance>['type']
+}
+export interface InteractionAction extends ActionHandler<InteractionParams> {}
+export function useSketchInteraction(onInteraction: InteractionAction): void {
+  const app = useSketchApp()
+  useEffect(() => {
+    if (app == null) {
+      return
+    }
+
+    const subscriptions = new Set<ReturnType<typeof app.on>>()
+
+    subscriptions.add(
+      app.on({
+        type: 'pointerdown',
+        action: createInteractionHandler('pointerdown', onInteraction),
+      })
+    )
+    subscriptions.add(
+      app.on({
+        type: 'pointermove',
+        action: createInteractionHandler('pointermove', onInteraction),
+      })
+    )
+    subscriptions.add(
+      app.on({
+        type: 'pointerup',
+        action: createInteractionHandler('pointerup', onInteraction),
+      })
+    )
+
+    return () => {
+      subscriptions.forEach((fn) => fn())
+      subscriptions.clear()
+    }
+  })
+}
+
+function createInteractionHandler(
+  type: InteractionEvent<ApplicationInstance>['type'],
+  handler: InteractionAction
+) {
+  return function interactionHandler(arg: InteractionActionParams) {
+    if (handler != null) {
+      handler({
+        type: type,
+        ...arg,
+      })
+    }
+  }
 }
