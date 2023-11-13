@@ -4,6 +4,7 @@ import type {
   TickEvent,
   InteractionEvent,
   TickApplication,
+  ResizeApplication,
 } from 'sketch-application'
 
 import {attach} from 'sketch-attach'
@@ -23,6 +24,6 @@ export const Application = withInteraction<
   | ResizeEvent<CtxApplication<ResizeEvent>>
   | TickEvent<CtxApplication<TickEvent>>
   | InteractionEvent<CtxApplication<InteractionEvent>>,
-  TickApplication & typeof CtxApplication
+  TickApplication & ResizeApplication & typeof CtxApplication
 >(withTick(withResize(CtxApplication)))
 export type ApplicationInstance = InstanceType<typeof Application>

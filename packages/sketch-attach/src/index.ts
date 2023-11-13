@@ -22,9 +22,9 @@ export function attach(opts?: Attachment) {
 
   // Handle special case for document body
   // Canvas defaults display method creates a small margin, which causes body to grow each time the canvas is resized which triggers the observer again
-  if (container === document.body) {
-    canvas.style.display = 'block'
-  }
+  // if (container === document.body) {
+  canvas.style.display = 'block'
+  // }
 
   return {
     canvas,

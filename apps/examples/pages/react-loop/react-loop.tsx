@@ -11,7 +11,7 @@ root.render(<App />)
 function App() {
   return (
     <Container>
-      <SketchLoop onTick={render} onInteraction={onInteractionEvent}/>
+      <SketchLoop onTick={render} onInteraction={onInteractionEvent} />
     </Container>
   )
 }
@@ -20,7 +20,11 @@ function Container({children}: React.PropsWithChildren) {
   return <div style={{width: '100vw', height: '100vh'}}>{children}</div>
 }
 
-function onInteractionEvent({type, app, point}: Parameters<InteractionAction>[0]) {
+function onInteractionEvent({
+  type,
+  app,
+  point,
+}: Parameters<InteractionAction>[0]) {
   console.log(type, '::', point, ',,')
 }
 

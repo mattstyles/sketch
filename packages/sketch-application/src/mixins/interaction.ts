@@ -12,7 +12,7 @@ export interface InteractionHandler<T = InteractiveApplication>
 
 export interface InteractionEvent<T = InteractiveApplication> extends Event {
   type: 'pointerdown' | 'pointerup' | 'pointermove'
-  action: ({app, point}: {app: T; point: Point}) => void
+  action: InteractionHandler<T>
 }
 export type InteractiveApplication = ReturnType<typeof withInteraction>
 export function withInteraction<
@@ -44,7 +44,7 @@ export function withInteraction<
       if (map != null) {
         for (let [_, fn] of map) {
           fn({
-            point: {x: event.clientX * scale, y: event.clientY * scale},
+            point: {x: event.offsetX * scale, y: event.offsetY * scale},
             app: this,
           })
         }
@@ -57,7 +57,7 @@ export function withInteraction<
       if (map != null) {
         for (let [_, fn] of map) {
           fn({
-            point: {x: event.clientX * scale, y: event.clientY * scale},
+            point: {x: event.offsetX * scale, y: event.offsetY * scale},
             app: this,
           })
         }
@@ -67,10 +67,12 @@ export function withInteraction<
     #onPointermove = (event: PointerEvent) => {
       const map = this._events.get('pointermove')
       const scale = window.devicePixelRatio
+      const c = this.canvas
+
       if (map != null) {
         for (let [_, fn] of map) {
           fn({
-            point: {x: event.clientX * scale, y: event.clientY * scale},
+            point: {x: event.offsetX * scale, y: event.offsetY * scale},
             app: this,
           })
         }
