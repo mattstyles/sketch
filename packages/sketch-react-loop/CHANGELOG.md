@@ -1,5 +1,21 @@
 # sketch-react-loop
 
+## 0.6.0
+
+### Minor Changes
+
+- fddc61b: Add interaction and resize events to sketch-react-loop
+
+### Patch Changes
+
+- c724693: Update tick event typings
+- a737b56: Update export interaction handlers for react apps
+- Updated dependencies [c724693]
+- Updated dependencies [d74d4bd]
+- Updated dependencies [a737b56]
+  - sketch-application@0.5.1
+  - sketch-loop@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes

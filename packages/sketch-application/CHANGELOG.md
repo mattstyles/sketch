@@ -1,5 +1,16 @@
 # sketch-application
 
+## 0.5.1
+
+### Patch Changes
+
+- c724693: Update tick event typings
+- d74d4bd: Export action handler events
+- a737b56: Update export interaction handlers for react apps
+- Updated dependencies [c724693]
+  - sketch-canvas-size@0.5.1
+  - sketch-context@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes

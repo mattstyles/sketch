@@ -1,5 +1,11 @@
 # tsconfig
 
+## 0.5.1
+
+### Patch Changes
+
+- c724693: Update tick event typings
+
 ## 0.5.0
 
 ### Minor Changes

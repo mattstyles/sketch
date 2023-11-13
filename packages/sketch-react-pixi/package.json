@@ -1,6 +1,6 @@
 {
   "name": "sketch-react-pixi",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Exposes a sketch-pixi app to context",
   "main": "lib/index.js",
   "module": "lib/index.mjs",

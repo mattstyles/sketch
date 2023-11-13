@@ -4,6 +4,7 @@ import type {
   ApplicationInstance,
   TickAction,
   InteractionAction,
+  ResizeAction,
 } from 'sketch-react-app'
 
 import {createRoot} from 'react-dom/client'
@@ -13,6 +14,7 @@ import {
   useSketchApp,
   useSketchTick,
   useSketchInteraction,
+  useSketchResize,
 } from 'sketch-react-app'
 
 const container = document.querySelector('.js-app') as HTMLElement
@@ -63,6 +65,7 @@ function Controls() {
         {isRunning ? 'Pause' : 'Resume'}
       </button>
       <InteractionTrace />
+      <ResizeTrace />
     </div>
   )
 }
@@ -85,6 +88,22 @@ function InteractionTrace() {
       <p className='text'>Type: {type}</p>
       <p className='text'>
         Position: [{position[0].toFixed(2)}, {position[1].toFixed(2)}]
+      </p>
+    </div>
+  )
+}
+
+function ResizeTrace() {
+  const [size, setSize] = useState<[number, number]>([0, 0])
+  useSketchResize(({app, width, height}: Parameters<ResizeAction>[0]) => {
+    setSize([width, height])
+  })
+
+  return (
+    <div>
+      <div className='spacer-md'></div>
+      <p className='text'>
+        Size: [{size[0].toFixed(2)}, {size[1].toFixed(2)}]
       </p>
     </div>
   )
