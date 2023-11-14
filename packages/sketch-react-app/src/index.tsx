@@ -11,6 +11,16 @@ import {loop} from 'sketch-loop'
 
 export type {ApplicationInstance} from 'sketch-loop'
 
+// Re-export events
+export type {
+  ResizeEvent,
+  TickEvent,
+  InteractionEvent,
+  TickHandler,
+  ResizeHandler,
+  InteractionHandler,
+} from 'sketch-application'
+
 type ApplicationContext = {
   app: ApplicationInstance | null
   setApp: (app: ApplicationInstance | null) => void
@@ -72,8 +82,7 @@ export function useSketchApp(): ApplicationInstance | null {
   return ctx?.app ?? null
 }
 
-export type TickAction = TickHandler<ApplicationInstance>
-export function useSketchTick(onTick: TickAction): void {
+export function useSketchTick(onTick: TickHandler): void {
   const app = useSketchApp()
   useEffect(() => {
     if (app == null) {
@@ -91,11 +100,9 @@ export function useSketchTick(onTick: TickAction): void {
   }, [onTick, app])
 }
 
-type InteractionActionParams = Parameters<
-  InteractionHandler<ApplicationInstance>
->[0]
+type InteractionActionParams = Parameters<InteractionHandler>[0]
 interface InteractionParams extends InteractionActionParams {
-  type: InteractionEvent<ApplicationInstance>['type']
+  type: InteractionEvent['type']
 }
 export interface InteractionAction extends ActionHandler<InteractionParams> {}
 export function useSketchInteraction(onInteraction: InteractionAction): void {
@@ -147,8 +154,7 @@ function createInteractionHandler(
   }
 }
 
-export type ResizeAction = ResizeHandler<ApplicationInstance>
-export function useSketchResize(onResize: ResizeAction): void {
+export function useSketchResize(onResize: ResizeHandler): void {
   const app = useSketchApp()
   useEffect(() => {
     if (app == null) {

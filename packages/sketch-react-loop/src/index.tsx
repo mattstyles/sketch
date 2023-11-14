@@ -4,25 +4,30 @@ import type {
   TickHandler,
   ResizeHandler,
   InteractionHandler,
-  ActionHandler,
 } from 'sketch-application'
 import {useEffect, useRef} from 'react'
 import {loop} from 'sketch-loop'
 
 export type {Application} from 'sketch-loop'
 
-export type TickAction = TickHandler<ApplicationInstance>
-export type ResizeAction = ResizeHandler<ApplicationInstance>
-type InteractionActionParams = Parameters<
-  InteractionHandler<ApplicationInstance>
->[0]
+// Re-export events
+export type {
+  ResizeEvent,
+  TickEvent,
+  InteractionEvent,
+  TickHandler,
+  ResizeHandler,
+  InteractionHandler,
+} from 'sketch-application'
+
+type InteractionActionParams = Parameters<InteractionHandler>[0]
 interface InteractionParams extends InteractionActionParams {
-  type: InteractionEvent<ApplicationInstance>['type']
+  type: InteractionEvent['type']
 }
 export type InteractionAction = (arg: InteractionParams) => void
 export type Props = {
-  onTick: TickAction
-  onResize?: ResizeAction
+  onTick: TickHandler
+  onResize?: ResizeHandler
   onInteraction?: InteractionAction
 }
 export function SketchLoop({onTick, onResize, onInteraction}: Props) {

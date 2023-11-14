@@ -7,6 +7,16 @@ import type {
   ResizeApplication,
 } from 'sketch-application'
 
+// Re-export events
+export type {
+  ResizeEvent,
+  TickEvent,
+  InteractionEvent,
+  TickHandler,
+  ResizeHandler,
+  InteractionHandler,
+} from 'sketch-application'
+
 import {attach} from 'sketch-attach'
 import {
   withTick,
