@@ -82,7 +82,9 @@ export function useSketchApp(): ApplicationInstance | null {
   return ctx?.app ?? null
 }
 
-export function useSketchTick(onTick: TickHandler): void {
+export function useSketchTick(
+  onTick: TickHandler | TickHandler<ApplicationInstance>
+): void {
   const app = useSketchApp()
   useEffect(() => {
     if (app == null) {

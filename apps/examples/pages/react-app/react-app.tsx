@@ -1,10 +1,9 @@
 import * as React from 'react'
 import {useState} from 'react'
 import type {
-  ApplicationInstance,
-  TickAction,
+  TickHandler,
   InteractionAction,
-  ResizeAction,
+  ApplicationInstance,
 } from 'sketch-react-app'
 
 import {createRoot} from 'react-dom/client'
@@ -95,7 +94,7 @@ function InteractionTrace() {
 
 function ResizeTrace() {
   const [size, setSize] = useState<[number, number]>([0, 0])
-  useSketchResize(({app, width, height}: Parameters<ResizeAction>[0]) => {
+  useSketchResize(({app, width, height}) => {
     setSize([width, height])
   })
 
@@ -110,7 +109,7 @@ function ResizeTrace() {
 }
 
 let time = 0
-function render({app, dt}: Parameters<TickAction>[0]) {
+function render({app, dt}: Parameters<TickHandler<ApplicationInstance>>[0]) {
   time = time + dt / 500
 
   const padding = 16
