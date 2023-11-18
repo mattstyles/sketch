@@ -1,5 +1,22 @@
 # examples
 
+## 0.7.0
+
+### Minor Changes
+
+- 6149da2: Update reduce chance of selecting text when interacting with the canvas
+
+### Patch Changes
+
+- Updated dependencies [6149da2]
+  - sketch-canvas@0.6.0
+  - sketch-fit@0.5.2
+  - sketch-loop@0.5.2
+  - sketch-pixi-app@0.5.2
+  - sketch-react-app@0.6.1
+  - sketch-react-loop@0.6.1
+  - sketch-react-pixi@0.5.2
+
 ## 0.6.0
 
 ### Minor Changes

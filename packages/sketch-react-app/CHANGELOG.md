@@ -1,5 +1,11 @@
 # sketch-react-app
 
+## 0.6.1
+
+### Patch Changes
+
+- sketch-loop@0.5.2
+
 ## 0.6.0
 
 ### Minor Changes

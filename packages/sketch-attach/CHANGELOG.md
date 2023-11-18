@@ -1,5 +1,12 @@
 # sketch-attach
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [6149da2]
+  - sketch-canvas@0.6.0
+
 ## 0.5.1
 
 ### Patch Changes

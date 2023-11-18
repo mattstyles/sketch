@@ -1,5 +1,11 @@
 # sketch-pixi-app
 
+## 0.5.2
+
+### Patch Changes
+
+- sketch-attach@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # sketch-canvas
 
+## 0.6.0
+
+### Minor Changes
+
+- 6149da2: Update reduce chance of selecting text when interacting with the canvas
+
 ## 0.5.1
 
 ### Patch Changes
