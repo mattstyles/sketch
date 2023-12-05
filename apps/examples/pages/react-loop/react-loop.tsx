@@ -1,5 +1,6 @@
 import * as React from 'react'
-import type {Props, InteractionAction} from 'sketch-react-loop'
+import type {Props, InteractionAction, TickHandler} from 'sketch-react-loop'
+import type {ApplicationInstance} from 'sketch-react-app'
 
 import {createRoot} from 'react-dom/client'
 import {SketchLoop} from 'sketch-react-loop'
@@ -30,6 +31,7 @@ function onInteractionEvent({
 
 let time = 0
 function render({app, dt}: Parameters<Props['onTick']>[0]) {
+  // const render: TickHandler<ApplicationInstance> = ({app, dt}) => {
   time = time + dt / 500
 
   app.ctx.fillStyle = '#232527'

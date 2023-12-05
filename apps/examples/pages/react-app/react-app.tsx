@@ -109,7 +109,8 @@ function ResizeTrace() {
 }
 
 let time = 0
-function render({app, dt}: Parameters<TickHandler<ApplicationInstance>>[0]) {
+// function render({app, dt}: Parameters<TickHandler<ApplicationInstance>>[0]) {
+const render: TickHandler<ApplicationInstance> = ({app, dt}) => {
   time = time + dt / 500
 
   const padding = 16

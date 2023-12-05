@@ -3,7 +3,8 @@ import type {TickHandler, ApplicationInstance} from 'sketch-loop'
 
 const app = loop({container: document.body})
 
-function render({app}: Parameters<TickHandler<ApplicationInstance>>[0]) {
+// function render({app}: Parameters<TickHandler<ApplicationInstance>>[0]) {
+const render: TickHandler<ApplicationInstance> = ({app}) => {
   const gradient = app.ctx.createLinearGradient(
     0,
     app.ctx.canvas.height * 0.85,
