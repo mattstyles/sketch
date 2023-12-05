@@ -1,5 +1,16 @@
 # examples
 
+## 0.8.0
+
+### Minor Changes
+
+- 682c891: Update react-loop handler types
+
+### Patch Changes
+
+- Updated dependencies [682c891]
+  - sketch-react-loop@0.7.0
+
 ## 0.7.0
 
 ### Minor Changes

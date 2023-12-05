@@ -1,5 +1,11 @@
 # sketch-react-loop
 
+## 0.7.0
+
+### Minor Changes
+
+- 682c891: Update react-loop handler types
+
 ## 0.6.1
 
 ### Patch Changes
