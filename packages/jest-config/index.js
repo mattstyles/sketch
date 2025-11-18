@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   // transform: {
   //   '^.+\\.(t|j)sx?$': ['tsup'],
@@ -9,4 +11,5 @@ module.exports = {
   injectGlobals: false,
   watchman: false,
   // testEnvironment: 'jsdom',
+  setupFilesAfterEnv: [path.join(__dirname, 'jest-setup.js')],
 }
