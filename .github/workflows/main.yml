@@ -15,8 +15,7 @@ jobs:
       - name: pnpm setup 💿
         uses: pnpm/action-setup@v4
         with:
-          version: 9.10.0
-          run_install: true
+          version: 9
 
       - name: Install and Build 🔧
         run: |
